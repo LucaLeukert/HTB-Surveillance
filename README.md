@@ -18,7 +18,7 @@ Using Nmap I saw that the remote machine had 3 open ports.
 Feroxbuster found a login page under `http://surveillance.htb/admin` that uses and outdated version of [Craft CMS](https://craftcms.com), version `4.4.14`
 
 #### Craft CMS
-The version of [Craft CMS](https://craftcms.com) used by the Website is vulnerable to [CVE-2023-41892]("https://www.cvedetails.com/cve/CVE-2023-41892/").
+The version of [Craft CMS](https://craftcms.com) used by the Website is vulnerable to [CVE-2023-41892](https://www.cvedetails.com/cve/CVE-2023-41892/).
 
 Using a [script](https://gist.github.com/gmh5225/8fad5f02c2cf0334249614eb80cbf4ce) I found on GitHub i was able too open a reverse shell to the target machine.
 - `python3 /opt/craft-cms.py http://surveillance.htb`
