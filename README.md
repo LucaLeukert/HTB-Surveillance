@@ -1,4 +1,4 @@
-# [HackTheBox Surveillance](https://www.hackthebox.com/machines/surveillance)
+# [Surveillance](https://www.hackthebox.com/machines/surveillance)
 
 - Luca Leukert - Mittwoch, 21. 03. 2024
 
