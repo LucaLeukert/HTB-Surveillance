@@ -31,7 +31,7 @@ Using a [script](https://gist.github.com/gmh5225/8fad5f02c2cf0334249614eb80cbf4c
 I did not find anything right way that I could use to priv esc so I did some digging a around by hand. I found a backup files for their database:
 - `/var/www/html/craft/storage/backups/surveillance--2023-10-17-202801--v4.4.14.sql.zip`
 
-This file include a lot of irrelevant information. After a file i stumbled on a `INSERT INTO 'users'` sql command. This command inserted a new user into the database named `Matthew B` with his E-Mail address and a hash of his password, likely a `SHA-256` hash. Bingo!!!.
+This file include a lot of irrelevant information. After a file i stumbled on a `INSERT INTO 'users'` sql command. This command inserted a new user into the database named `Matthew B` with his E-Mail address and a hash of his password, likely `SHA-256`. Bingo!!!.
 
 - email: `admin@surveillance.htb`
 - hash: `39ed84b22ddc63ab3725a1820aaa7f73a8f3f10d0848123562c9f35c675770ec`
@@ -39,7 +39,7 @@ This file include a lot of irrelevant information. After a file i stumbled on a 
 #### Bruteforcing Matthew's password
 Using `hash-identifier` i could determine that the hash was indeed a `SHA-256` hash.
 
-To crack the hash i used `hashcat`. After about 2 minutes of cracking i had the password of Matthew: `starcraft122490`. The password only works for SSH access
+To crack the hash i used `hashcat`. After about 2 minutes of cracking i had the password of Matthew. Sadly his password only works for SSH access and not for accessing the webportal
 - `hashcat -m 1400 Matthew.txt /usr/share/wordlists/rockyou.txt`
 
 #### This place feels familiar but somehow different
