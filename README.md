@@ -5,7 +5,7 @@
 ----
 
 #### Nmap
-`files/www-data/nmap.txt`
+- [files/www-data/nmap.txt](https://lucaleukert.github.io/HTB-Surveillance/files/www-data/nmap.txt)
 
 Using Nmap I saw that the remote machine had 3 open ports.
 1. 22/tcp - ssh - 3ubuntu0.4
@@ -13,7 +13,7 @@ Using Nmap I saw that the remote machine had 3 open ports.
 3. 8000/tcp - http - SimpleHTTPServer 0.6
 
 #### Feroxbuster
-`files/www-data/feroxbuster-scan.json`
+- [files/www-data/feroxbuster-scan.json](https://lucaleukert.github.io/HTB-Surveillance/files/www-data/feroxbuster-scan.json)
 
 Feroxbuster found a login page under `http://surveillance.htb/admin/login` that uses and outdated version of [Craft CMS](https://craftcms.com), version `4.4.14`
 - the version was listed as `4.4.14` on `http://surveillance.htb/` at the bottom of the page source code
@@ -25,11 +25,11 @@ Using a [script](https://gist.github.com/gmh5225/8fad5f02c2cf0334249614eb80cbf4c
 - `python3 /opt/craft-cms.py http://surveillance.htb`
 
 #### Privilege Escalation
-- linpeas scan under: `files/www-data/linpeas.txt`.
-- tree of the website: `files/www-data/tree.txt`
+- linpeas scan under: [files/www-data/linpeas.txt](https://lucaleukert.github.io/HTB-Surveillance/files/www-data/linpeas.txt)
+- tree of the website: [files/www-data/tree.txt](https://lucaleukert.github.io/HTB-Surveillance/files/www-data/tree.txt)
 
 I did not find anything right way that I could use to priv esc so I did some digging a around by hand. I found a backup files for their database:
-- `/var/www/html/craft/storage/backups/surveillance--2023-10-17-202801--v4.4.14.sql.zip`
+- [/var/www/html/craft/storage/backups/surveillance--2023-10-17-202801--v4.4.14.sql.zip](https://lucaleukert.github.io/HTB-Surveillance/files/www-data/backups/surveillance--2023-10-17-202801--v4.4.14.sql)
 
 This file include a lot of irrelevant information. After a file i stumbled on a `INSERT INTO 'users'` sql command. This command inserted a new user into the database named `Matthew B` with his E-Mail address and a hash of his password, likely `SHA-256`. Bingo!!!.
 
