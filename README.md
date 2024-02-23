@@ -15,8 +15,9 @@ Using Nmap I saw that the remote machine had 3 open ports.
 #### Feroxbuster
 `files/www-data/feroxbuster-scan.json`
 
-Feroxbuster found a login page under `http://surveillance.htb/admin` that uses and outdated version of [Craft CMS](https://craftcms.com), version `4.4.14`
-
+Feroxbuster found a login page under `http://surveillance.htb/admin/login` that uses and outdated version of [Craft CMS](https://craftcms.com), version `4.4.14`
+- the version was listed as `4.4.14` on `http://surveillance.htb/` at the bottom of the page source code
+ 
 #### Craft CMS
 The version of [Craft CMS](https://craftcms.com) used by the Website is vulnerable to [CVE-2023-41892](https://www.cvedetails.com/cve/CVE-2023-41892/).
 
